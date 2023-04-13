@@ -1,0 +1,7 @@
+.header {
+  background-image: url("../images/pattern-bg-desktop.png");
+  background-size: cover;
+  width: 100%;
+  height: 30%;
+  position: absolute;
+}
