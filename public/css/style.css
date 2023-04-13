@@ -1,129 +1,117 @@
-
-$header-bg-desktop: url("../images/pattern-bg-desktop.png");
-$header-bg-mobile: url("../images/pattern-bg-desktop.png");
-$header-bg-size: cover;
-$bg-width: 100%;
-$bg-height: 400px; 
-$bg-color-white: #fff;
-$color-very-dark-grey: hsl(0, 0%, 17%);
-$color-dark-gray: hsl(0, 0%, 59%);
-$border-radius: 10px;
-$descr-font-family:'rubik';
-
-html, body{
+html, body {
   margin: 0px;
-} 
+}
 
-.container-page{
+.container-page {
   display: flex;
   justify-content: center;
 }
 
-.header { 
+.header {
   position: absolute;
-  text-align:center;
+  text-align: center;
   display: flex;
-  background-image: $header-bg-desktop;
-  background-size: $header-bg-size;
-  width: $bg-width;
-  height: $bg-height;
+  background-image: url("../images/pattern-bg-desktop.png");
+  background-size: cover;
+  width: 100%;
+  height: 400px;
   justify-content: center;
 }
 
 #map {
-  position: absolute; 
-  width: 100%; 
+  position: absolute;
+  width: 100%;
   height: 62%;
   bottom: 0px;
   z-index: -1;
- }
+}
 
-.header h1{ 
-  font-family: $descr-font-family;
-  color: $bg-color-white;
+.header h1 {
+  font-family: "rubik";
+  color: #fff;
   margin-top: 30px;
   height: 50px;
 }
 
-.nav{
+.nav {
   position: absolute;
   margin-top: 100px;
   display: flex;
   text-align: center;
-  width: calc($bg-width - 60%);
-  height: calc($bg-height - 300px);
+  width: 40%;
+  height: 100px;
   justify-content: center;
   align-items: center;
 }
 
-.nav input{
+.nav input {
   width: 600px;
   height: 50px;
   border: 0px;
-  font-family: $descr-font-family;
+  font-family: "rubik";
   font-size: 1rem;
-  border-top-left-radius: $border-radius;
-  border-bottom-left-radius: $border-radius;  
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   padding-left: 20px;
 }
 
-.nav button{
+.nav button {
   width: 50px;
   height: 52px;
   border: 0px;
   font-weight: bold;
-  color: $bg-color-white;
-  background-color: $color-very-dark-grey;
-  border-top-right-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
+  color: #fff;
+  background-color: hsl(0, 0%, 17%);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   margin-left: 0px;
 }
 
-.description-bar{
-  background-color: $bg-color-white;
-  border-radius: $border-radius;
+.description-bar {
+  background-color: #fff;
+  border-radius: 10px;
   position: absolute;
-  width: calc( $bg-width - 30%);
-  height: calc( $bg-height - 250px);
+  width: 70%;
+  height: 150px;
   margin: 320px 250px;
-  -webkit-box-shadow: 1px 18px 28px -6px rgba(0,0,0,0.27); 
-  box-shadow: 1px 18px 28px -6px rgba(0,0,0,0.27);
+  -webkit-box-shadow: 1px 18px 28px -6px rgba(0, 0, 0, 0.27);
+  box-shadow: 1px 18px 28px -6px rgba(0, 0, 0, 0.27);
 }
 
-.decrip-container{
+.decrip-container {
   position: absolute;
   display: flex;
-  width: $bg-width;
+  width: 100%;
   list-style-type: none;
   margin: 50px auto;
   justify-content: center;
 }
 
-.container-item{
+.container-item {
   position: relative;
   list-style-type: none;
   margin-right: 50px;
-  width: calc($bg-width - 10%);
-  height: calc($bg-height - 350px);
-  border-left: 1px solid ;
-  border-color: $color-dark-gray;
+  width: 90%;
+  height: 50px;
+  border-left: 1px solid;
+  border-color: hsl(0, 0%, 59%);
   padding-left: 30px;
 }
 
-.container-item p{
-  font-family: $descr-font-family;
+.container-item p {
+  font-family: "rubik";
   font-size: 0.8rem;
-  color: $color-dark-gray;
+  color: hsl(0, 0%, 59%);
   font-weight: 500;
   letter-spacing: 2px;
   position: absolute;
   margin-top: -10px;
 }
 
-.container-item h1{
-  font-family: $descr-font-family;
+.container-item h1 {
+  font-family: "rubik";
   font-size: 1.5rem;
-  font-weight: 500;  
+  font-weight: 500;
   position: absolute;
   margin-bottom: -10px;
 }
@@ -187,58 +175,47 @@ html, body{
   margin: auto;
   padding: 0;
   top: -100px;
-  opacity: 0.20;
+  opacity: 0.2;
   z-index: 0;
   animation: shadow 1s ease 0.2s infinite;
 }
 
 @keyframes updown {
-    0%   {
-      transform: translateY(0px);
-    }
-
-    50% {
-      transform: translateY(8px);
-    }
-  
-    100% {
-      transform: translateY(0px);
-    }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
-
 @keyframes shadow {
-    0%   {
-      transform: scale(1);
-      opacity: 0.20;
-    }
-
-    50% {
-      transform: scale(0.95);
-      opacity: 0.28;
-    }
-  
-    100% {
-      transform: scale(1);
-      opacity: 0.20;
-    }
+  0% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(0.95);
+    opacity: 0.28;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
 }
-
-
 @media (max-width: 970px) {
-
-  .header { 
-    background-image: $header-bg-mobile;
+  .header {
+    background-image: url("../images/pattern-bg-desktop.png");
   }
-
-  .description-bar{
-   width:  410px;
-   height: 370px;
+  .description-bar {
+    width: 410px;
+    height: 370px;
   }
-
-  .decrip-container{
+  .decrip-container {
     display: block;
   }
-
   .container-item {
     display: flex;
     width: auto;
@@ -246,7 +223,5 @@ html, body{
     padding: 0px;
     border: 0px;
     justify-content: center;
-   }
- 
-  
+  }
 }
