@@ -13,3 +13,10 @@
 
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
+
+
+# Nuxt generate
+.Nuxt_generate
+
+# dist
+.dist
