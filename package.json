@@ -1,0 +1,37 @@
+{
+  "name": "ip-address-tracker",
+  "version": "1.0.0",
+  "description": "![Design preview for the IP address tracker coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass": "sass  --no-source-map src/sass:public/style",
+    "copy:assets": "copyfiles -u 1 ./src/images/**/* public",
+    "copy:html": "copyfiles -u 1 ./src/*.html public",
+    "copy": "npm-run-all --parallel copy:*",
+    "watch:assets": "onchange \"src/*.html\" -- npm run copy:html",
+    "watch:html": "onchange \"src/*.html\" -- npm run copy:html",
+    "watch:sass": "sass  --no-source-map --watch src/sass:public/css",
+    "watch": "npm-run-all --parallel watch:*",
+    "serve": "browser-sync start --server public --files public",
+    "start": "npm-run-all copy --parallel watch serve",
+    "build": "npm-run-all copy:html build:*",
+    "postbuild": "postcss public/css/*.css -u autoprefixer cssnano -r --no-map"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "autoprefixer": "^10.4.2",
+    "browser-sync": "^2.27.7",
+    "copyfiles": "^2.4.1",
+    "cssnano": "^5.0.17",
+    "express": "^4.18.2",
+    "jquery": "^3.6.4",
+    "node": "^19.8.1",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "postcss-cli": "^9.1.0",
+    "require": "^2.4.20",
+    "sass": "^1.49.8"
+    }
+  }
+
