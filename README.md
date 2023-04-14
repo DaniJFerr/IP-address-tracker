@@ -2,6 +2,8 @@
 
 ## Welcome! 👋
 
+
+
 ## The Project
 
 This IP Address Tracker app get the IP Address locations using the [IP Geolocation API by IPify](https://geo.ipify.org/), and generate the map using [LeafletJS](https://leafletjs.com/).
@@ -13,11 +15,7 @@ Your users should be able to:
 - See their own IP address on the map on the initial page load
 - Search for any IP addresses or domains and see the key information and location
 
----
 
-**We don't take any responsibility if you expose your API Key while completing the challenge and have not secured it.**
-
----
 
 ## Deploying your project
 
@@ -26,6 +24,7 @@ Our recommend hosts are:
 - [GitHub Pages](https://pages.github.com/)
 - [Vercel](https://vercel.com/)
 - [Netlify](https://www.netlify.com/)
+
 
 
 ## Features
@@ -41,6 +40,8 @@ Our recommend hosts are:
 [3]: https://sass-lang.com/
 [4]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [5]: https://www.frontendmentor.io/home](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0
+
+
 
 ## Usage
 
