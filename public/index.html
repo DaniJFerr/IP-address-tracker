@@ -17,7 +17,7 @@
       <header class="header" aria-label="header">
         <h1>IP Address Tracker</h1>
         <div class="nav">
-          <form role="search">
+          <form onsubmit="event.preventDefault();" role="search">
             <label for="search">Search for stuff</label>
             <input id="search-bar" type="search" placeholder="Search for any IP address or domain" aria-label="Search" autofocus required />
             <button id="search-button" type="submit">Go</button>
