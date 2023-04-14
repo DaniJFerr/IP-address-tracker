@@ -2,8 +2,6 @@
 
 ## Welcome! 👋
 
-Thanks for checking out this front-end coding challenge.
-
 ## The Project
 
 This IP Address Tracker app get the IP Address locations using the [IP Geolocation API by IPify](https://geo.ipify.org/), and generate the map using [LeafletJS](https://leafletjs.com/).
