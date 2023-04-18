@@ -5,27 +5,28 @@ document.addEventListener('DOMContentLoaded', function () {
     const locationContainer = document.getElementById('local');
     const timezoneContainer = document.getElementById('time');
     const ispContainer = document.getElementById('isp');
-    const API_KEY = 'at_UcExkLMsteeelpcckDqXrtBwZExkg';
+    const API_KEY = '341cba93fc5c4e4da7f7fb08a85608c7';
     const mapDiv = document.getElementById('map');
     let map;
     let marker;
   
     const fetchData = (ipAddress) => {
-      fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`)
+      // fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`)
+         fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=${API_KEY}&ip=${ipAddress} `)
         .then(response => response.json())
         .then(data => {
           ipContainer.innerHTML = `<p>IP Address</p><h1>${data.ip}</h1>`;
-          locationContainer.innerHTML = `<p>Location</p><h1>${data.location.city ? data.location.city + ',' : ''} ${data.location.region ? data.location.region + ' ' : ''}${data.location.postalCode || ''}</h1>`;
-          timezoneContainer.innerHTML = `<p>Timezone</p><h1>UTC ${data.location.timezone}</h1>`;
+          locationContainer.innerHTML = `<p>Location</p><h1>${data.city ? data.city + ',' : ''} ${data.country_name ? data.country_name + ' ' : ''}${data.zipcode || ''}</h1>`;
+          timezoneContainer.innerHTML = `<p>Timezone</p><h1>UTC ${data.time_zone.offset}</h1>`;
           ispContainer.innerHTML = `<p>ISP</p><h1>${data.isp}</h1>`;
   
           if (marker) {
             map.removeLayer(marker);
           }
   
-          map.flyTo([data.location.lat, data.location.lng], 13);
-          marker = L.marker([data.location.lat, data.location.lng]).addTo(map)
-            .bindPopup(`<b>${data.location.city}, ${data.location.region} ${data.location.postalCode}</b>`).openPopup();
+          map.flyTo([data.latitude, data.longitude], 13);
+          marker = L.marker([data.latitude, data.longitude]).addTo(map)
+            .bindPopup(`<b>${data.city}, ${data.country_name } ${data.zipcode}</b>`).openPopup();
         })
         .catch(error => console.log(error));
     };
