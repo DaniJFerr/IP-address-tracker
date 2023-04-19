@@ -216,7 +216,7 @@ label {
 @media (max-width: 490px) {
   .description-bar {
     margin-left: 20px;
-    height: 380px;
+    height: 300px !important;
   }
  
   .decrip-container {
@@ -235,12 +235,7 @@ label {
   .decrip-container {
     width: 90%;
     display: block;
-    margin: 40px 15px;
-  }
-
-  .description-bar {
-    height: 340px !important;
-
+    margin: 30px 15px;
   }
 
 
