@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(response => response.json())
         .then(data => {
           ipContainer.innerHTML = `<p>IP Address</p><h1>${data.ip}</h1>`;
-          locationContainer.innerHTML = `<p>Location</p><h1>${data.city ? data.city + ',' : ''} ${data.country_name ? data.country_name + ' ' : ''}${data.zipcode || ''}</h1>`;
+          locationContainer.innerHTML = `<p>Location</p><h1>${data.country_name ? data.country_name + ' ' : ''}${data.zipcode || ''}</h1>`;
           timezoneContainer.innerHTML = `<p>Timezone</p><h1>UTC ${data.time_zone.offset}</h1>`;
           ispContainer.innerHTML = `<p>ISP</p><h1>${data.isp}</h1>`;
   
