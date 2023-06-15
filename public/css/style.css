@@ -6,12 +6,12 @@
 
 html, body {
   margin: 0px;
-  padding: 0px;
 }
 
 .container-page {
   display: flex;
   justify-content: center;
+  padding: auto 50px !important;
 }
 
 .header {
@@ -20,7 +20,6 @@ html, body {
   display: flex;
   background-image: url("../images/pattern-bg-desktop.png");
   background-size: cover;
-  margin: 0px;
   width: 100%;
   height: 300px;
   justify-content: center;
@@ -28,10 +27,8 @@ html, body {
 
 #map {
   position: absolute;
-  display: flex;
   width: 100%;
-  height: 100%;
-  top: 300px;
+  height: 71%;
   bottom: 0px;
   z-index: -1;
 }
@@ -45,10 +42,10 @@ html, body {
 
 .nav {
   position: absolute;
-  margin: 90px auto 0px;
+  margin-top: 90px;
   display: flex;
   text-align: center;
-  width: 500px;
+  width: 50%;
   height: 100px;
   align-items: center;
   justify-content: center;
@@ -56,7 +53,7 @@ html, body {
 
 form {
   position: relative;
-  width: 25rem;
+  width: 70%;
   height: 3.5rem;
   background: #57bd84;
   border-radius: 0.7rem;
@@ -65,6 +62,7 @@ form {
 input, button {
   height: 3.5rem;
   font-family: "rubik";
+  position: relative;
   border: 0;
   color: hsl(0, 0%, 17%);
   font-size: 1rem;
@@ -72,14 +70,14 @@ input, button {
 
 input[type=search] {
   outline: 0;
-  width: 90%;
+  width: 93%;
   background: #fff;
   padding: 0 1.6rem;
   border-radius: 0.7rem;
   appearance: none;
   transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
   transition-property: width, border-radius;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
 }
@@ -99,8 +97,9 @@ button {
 
 input:not(:placeholder-shown) {
   border-radius: 0.7rem 0 0 0.7rem;
-  width: calc(90% - 6rem);
+  width: calc(93% - 6rem);
   justify-content: center;
+  position: relative;
 }
 input:not(:placeholder-shown) + button {
   display: block;
@@ -142,15 +141,18 @@ label {
   margin-right: 10px;
   width: 85%;
   height: 50px;
-  border-left: 1px solid;
-  border-color: hsl(0, 0%, 59%);
   padding-left: 30px;
+}
+
+.container-item:not(:first-of-type) {
+  border-left: 2px solid;
+  border-color: hsl(0, 1%, 73%);
 }
 
 .container-item p {
   font-family: "rubik";
   font-size: 0.8rem;
-  color: hsl(0, 0%, 59%);
+  color: hsl(0, 1%, 73%);
   font-weight: 500;
   letter-spacing: 2px;
   position: absolute;
@@ -161,23 +163,19 @@ label {
   font-family: "rubik";
   font-size: 1.5rem;
   font-weight: 500;
-  position: absolute;
+  position: relative;
   margin-bottom: -10px;
 }
 
 @media (max-width: 912px) {
-
   .description-bar {
-    height: 370px !important;
+    height: auto !important;
     margin: 220px 20px;
   }
-
   .decrip-container {
-    width: 90%;
     display: block;
-    margin: 40px 20px;
+    margin: 40px auto;
   }
-
   .container-item {
     display: flex;
     width: auto;
@@ -185,58 +183,54 @@ label {
     padding: 0px;
     border: 0px;
     justify-content: center;
+    border: none !important;
   }
- 
-  .header{
-    margin: 0px;
+  .nav {
+    width: 90%;
+    padding: 0px 0px;
   }
-
-  #map{
-    margin: 0px;
+  #map {
+    height: 75%;
   }
-
-  button {
-    width: 4.5rem;
-    font-size: 1.5rem;
-  }
-
-  form {
-    width: 21.5rem;
-  }
-
   input[type=search] {
-    width: 85%;
+    width: 90%;
     justify-content: center;
   }
+  form {
+    width: 70%;
+  }
   input:not(:placeholder-shown) {
-    width: calc(100% - 6rem);
+    width: calc(85% - 6rem);
   }
 }
-
 @media (max-width: 490px) {
   .description-bar {
     margin-left: 20px;
-    height: 300px !important;
+    height: 380px;
   }
- 
+  #map {
+    height: 65%;
+  }
+  nav {
+    width: 280px;
+    padding: auto 1px;
+  }
   .decrip-container {
     width: 300px;
     display: block;
   }
-
-  .container-item h1 {
-    font-size: 1rem;
+  input[type=search] {
+    width: 85%;
+    justify-content: center;
   }
-
-  #map{
-    height: 65%;
-  }
-
-  .decrip-container {
+  form {
     width: 90%;
-    display: block;
-    margin: 30px 15px;
+    justify-content: center;
   }
-
-
+  input:not(:placeholder-shown) {
+    width: calc(85% - 6rem);
+  }
+  input::placeholder {
+    font-size: 0.9rem;
+  }
 }

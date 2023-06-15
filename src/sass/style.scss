@@ -6,7 +6,7 @@ $bg-width: 100%;
 $bg-height: 300px; 
 $bg-color-white: #fff;
 $color-very-dark-grey: hsl(0, 0%, 17%);
-$color-dark-gray: hsl(0, 0%, 59%);
+$color-dark-gray: hsl(0, 1%, 73%);
 $border-radius: 10px;
 $descr-font-family:'rubik';
 $rad: .7rem;
@@ -63,10 +63,10 @@ html, body{
 
 .nav{
   position: absolute;
-  margin: 90px auto 0px;
+  margin-top: 90px;
   display: flex;
   text-align: center;
-  width: 500px;
+  width: 50%;
   height: calc($bg-height - 200px);
   align-items: center;
   justify-content: center;
@@ -74,7 +74,7 @@ html, body{
 
 form {
     position: relative;
-    width: 100%;
+    width: 70%;
     height: 3.5rem;
     background: $color-brand;
     border-radius: $rad;
@@ -84,6 +84,7 @@ form {
    input, button {
     height: $height-input;
     font-family: $descr-font-family;
+    position: relative;
     border: 0;
     color: $color-very-dark-grey;  
     font-size: 1rem;
@@ -91,14 +92,14 @@ form {
 
     input[type="search"] {
     outline: 0; // <-- shold probably remove this for better accessibility, adding for demo aesthetics for now.
-    width: 100% ;
+    width: 93%;
     background: $color-light;
     padding: 0 1.6rem;
     border-radius: $rad;
     appearance: none; //for iOS input[type="search"] roundedness issue. border-radius alone doesn't work
     transition: all $dur $bez;
     transition-property: width, border-radius;  
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
   }
@@ -118,8 +119,9 @@ form {
   
    input:not(:placeholder-shown) {
     border-radius: $rad 0 0 $rad;
-    width: calc(90% - $btn-width);
+    width: calc(93% - $btn-width);
     justify-content: center;
+    position: relative;
     + button {
       display: block;
       border: 0;
@@ -161,9 +163,12 @@ form {
   margin-right: 10px;
   width: calc($bg-width - 15%);
   height: calc($bg-height - 250px);
-  border-left: 1px solid ;
-  border-color: $color-dark-gray;
   padding-left: 30px;
+}
+
+.container-item:not(:first-of-type){
+  border-left: 2px solid ;
+  border-color: $color-dark-gray;
 }
 
 .container-item p{
@@ -180,20 +185,20 @@ form {
   font-family: $descr-font-family;
   font-size: 1.5rem;
   font-weight: 500;  
-  position: absolute;
+  position: relative;
   margin-bottom: -10px;
 }
 
 @media (max-width: 912px) {
 
   .description-bar{
-   height: 370px !important;
+   height: auto !important;
    margin: 220px 20px;
   }
 
   .decrip-container{
     display: block;
-    margin: 40px 20px;
+    margin: 40px auto;
   }
 
   .container-item {
@@ -203,49 +208,79 @@ form {
     padding: 0px;
     border: 0px;
     justify-content: center;
+    border: none !important;
    }
 
    .nav{
-
-  //   display: flex;
-  //   margin: 0px 0px;
-  //   padding-left: 0px ;
- }
-
-  button {
-    width: 4.5rem;
-    font-size: 1.5rem;
+    width: 90%;
+    padding: 0px 0px;
   }
 
+  
+  #map {
+    height: 75%;
+  }
+
+  // button {
+  //   width: 3.5rem;
+  //   font-size: 1.5rem;
+  // }
+
    input[type="search"] {
-    width: 100%;
-    // margin: auto auto;
+    width: 90%;
     justify-content: center;
   }
 
+  form {
+    width: 70%;
+  
+  }
+
   input:not(:placeholder-shown) {
-    width: calc(100% - $btn-width);
+    width: calc(85% - $btn-width);
     }
  
 }
 
 @media (max-width: 490px){
 
-
   .description-bar{
     margin-left: 20px;
     height: 380px;
    }
 
+  #map {
+    height: 65%;
+  }
+
    nav{
-    width: 50% !important;
-    // margin-left: 20px;
+    width: 280px;
+   padding:  auto 1px;
   }
 
   .decrip-container{
     width: 300px;
     display: block;
   }
+
+  input[type="search"] {
+    width: 85%;
+    //  margin: auto auto;
+    justify-content: center;
+  }
+   form {
+    width: 90%;
+    //  margin: auto auto;
+    justify-content: center;
+  }
+
+  input:not(:placeholder-shown) {
+    width: calc(85% - $btn-width);
+   }
+  
+  input::placeholder{
+    font-size: .9rem;
+   }
 
 }
 
