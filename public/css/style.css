@@ -140,7 +140,7 @@ label {
   list-style-type: none;
   margin-right: 10px;
   width: 85%;
-  height: 50px;
+  height: auto;
   padding-left: 30px;
 }
 
@@ -201,6 +201,9 @@ label {
   }
   input:not(:placeholder-shown) {
     width: calc(85% - 6rem);
+  }
+  .container-item p {
+    margin-top: 0px;
   }
 }
 @media (max-width: 490px) {
