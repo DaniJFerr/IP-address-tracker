@@ -219,9 +219,11 @@ label {
     padding: auto 1px;
   }
   .decrip-container {
-    width: 300px;
+    width: auto;
     display: block;
+    text-align: center;
   }
+
   input[type=search] {
     width: 85%;
     justify-content: center;
