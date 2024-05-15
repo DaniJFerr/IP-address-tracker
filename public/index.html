@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="crossorigin=""></script>
+    <script src="https://kit.fontawesome.com/ff38e5c58a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style.css">
     <script type="text/javascript" src ="./script/script.js"></script>
     <title>IP Address Tracker</title>
@@ -20,14 +21,15 @@
           <form onsubmit="event.preventDefault();" role="search">
             <label for="search">Search for stuff</label>
             <input id="search-bar" type="search" placeholder="Search for any IP address or domain" aria-label="Search" autofocus required />
-            <button id="search-button" type="submit">Go</button>
+            <button class=".btn-search" id="search-button" type="submit">Go</button>
           </form>
         </div>
       </header>
     
       <section class="description-bar" aria-label="description-bar">
         <div class="decrip-container">
-          <div id="ip" class="container-item">
+          <div id="ip" class="container-ip">
+            <!-- <p id="toggle-button"><i class="fa-solid fa-caret-down"></i></p> -->
             <p>IP Address</p>
           </div>
           <div id="local" class="container-item">

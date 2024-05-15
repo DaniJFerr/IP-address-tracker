@@ -7,8 +7,20 @@ document.addEventListener('DOMContentLoaded', function () {
     const ispContainer = document.getElementById('isp');
     const API_KEY = '341cba93fc5c4e4da7f7fb08a85608c7';
     const mapDiv = document.getElementById('map');
+    let toggleButton = document.querySelector('.description-bar');
+    let descripContainer = document.querySelectorAll('.container-item');
     let map;
     let marker;
+
+    
+    function toggleDescripContainer() {
+      descripContainer.forEach(function(container){
+        container.classList.toggle('active');
+      })
+    }
+  
+    // Add event listener to the button
+    toggleButton.addEventListener('click', toggleDescripContainer);
   
     const fetchData = (ipAddress) => {
       // fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${API_KEY}&ipAddress=${ipAddress}`)
@@ -30,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.log(error));
     };
+
   
     // Fetch initial location on page load
     fetchData('');
@@ -58,4 +71,5 @@ document.addEventListener('DOMContentLoaded', function () {
       marker = L.marker([e.latitude, e.longitude]).addTo(map)
         .bindPopup("You are here!").openPopup();
     });
+
   });
