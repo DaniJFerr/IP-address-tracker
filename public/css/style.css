@@ -32,7 +32,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   bottom: 0px;
-  z-index: -1;
+  z-index: 0;
 }
 
 .header h1 {
@@ -127,6 +127,7 @@ label {
   top: 220px;
   -webkit-box-shadow: 1px 18px 28px -6px rgba(0, 0, 0, 0.27);
   box-shadow: 1px 18px 28px -6px rgba(0, 0, 0, 0.27);
+  z-index: 1;
 }
 
 .decrip-container {
