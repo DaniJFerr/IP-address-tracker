@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.6.0/mapbox-gl.js"></script>
+    <link href="./src/style.scss" rel="stylesheet">
+    <script type="module" src="./src/script.js"></script>
+    <title>IP Address Tracker</title>
+  </head>
+  <body>
+    <main class="container-page" aria-label="container-page">
+      <header class="header" aria-label="header">
+        <h1>IP Address Tracker</h1>
+        <div class="nav">
+          <form onsubmit="event.preventDefault();" role="search">
+            <label for="search">Search for stuff</label>
+            <input id="search-bar" type="search" placeholder="Search for any IP address or domain" aria-label="Search" autofocus required />
+            <button id="search-button" type="submit">Go</button>
+          </form>
+        </div>
+      </header>
+      <section class="description-bar" aria-label="description-bar">
+        <div class="decrip-container">
+          <div id="ip" class="container-ip">
+            <p>IP Address</p>
+          </div>
+          <div id="local" class="container-item">
+            <p>Location</p>
+          </div>
+          <div id="time" class="container-item">
+            <p>Timezone</p>
+          </div>
+          <div id="isp" class="container-item">
+            <p>ISP</p>
+          </div>
+        </div>
+      </section>
+      <section id="map" aria-label="map-section"></section>
+    </main>
+  </body>
+</html>
